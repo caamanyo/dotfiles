@@ -2,6 +2,7 @@
 
 Link to tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 
+## Clone dotfiles
 1. Set alias in .zsh:
 
 `alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'`
@@ -13,11 +14,13 @@ Link to tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 3. Run:
 
 ```bash
-git clone --bare https://bitbucket.org/durdn/cfg.git $HOME/.cfg
+git clone --bare https://github.com/caamanyo/dotfiles.git $HOME/.cfg
 function config {
    /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
 }
 mkdir -p .config-backup
+# Select desktop flavour
+config branch desired-branch
 config checkout
 if [ $? = 0 ]; then
   echo "Checked out config.";
