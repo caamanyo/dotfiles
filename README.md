@@ -9,7 +9,7 @@ Link to tutorial: https://www.atlassian.com/git/tutorials/dotfiles
 
 2. Ignore .cfg folder:
 
-`echo ".cfg" >> .gitignore`
+`echo ".cfg/" >> .gitignore`
 
 3. Run:
 
