@@ -18,3 +18,7 @@ def func(c):
         c.togroup("1")
     if c.window.get_wm_class()[0] == "vscodium":
         c.togroup("3")
+    if c.window.get_wm_class()[0] == "Steam":
+        c.togroup("4")
+    if c.window.get_wm_class()[0] == "Thunar":
+        c.togroup("9")

@@ -10,12 +10,19 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod],
-        "space",
-        lazy.layout.next(),
-        desc="Move window focus to other window"),
+    # Key([mod],
+    #     "space",
+    #     lazy.layout.next(),
+    #     desc="Move window focus to other window"),
 
-    Key([mod], "d", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
+    # Apps
+    Key([mod], "e", lazy.spawn("vscodium"), desc="Open VScodium"),
+    Key([mod], "n", lazy.spawn("obsidian"), desc="Start Obsidian"),
+
+
+
+    # Rofi keys
+    Key([mod], "space", lazy.spawn("rofi -show combi"), desc="spawn rofi"),
     Key([mod], "c", lazy.spawn(
         "rofi -show calc -modi calc -no-show-match -no-sort"), desc="spawn rofi"),
     Key([mod], "s", lazy.spawn("gnome-screenshot -i"), desc="Screenshot utility"),
@@ -77,10 +84,16 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+
+    # Kill window
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
+
+    # Swaping windows
     Key([mod, "shift", "control"], "h", lazy.layout.swap_column_left()),
     Key([mod, "shift", "control"], "l", lazy.layout.swap_column_right()),
     Key([mod, "shift"], "space", lazy.layout.flip()),
+
+    # Restart Qtile
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     # Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod, "mod1"], "q", lazy.spawn(
@@ -89,9 +102,12 @@ keys = [
         "r",
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+
+    # Audio control
     Key([], "XF86AudioRaiseVolume", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ +5%")),
     Key([], "XF86AudioLowerVolume", lazy.spawn(
         "pactl set-sink-volume @DEFAULT_SINK@ -5%")),
     Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")),
+    Key([], "XF86AudioPlay", lazy.spawn("playerctl play-pause")),
 ]

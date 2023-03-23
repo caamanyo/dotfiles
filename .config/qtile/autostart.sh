@@ -2,6 +2,7 @@
 numlockx &
 feh --bg-fill --randomize /usr/share/endeavouros/backgrounds/eos_wallpapers_community/* & disown
 picom & disown # --experimental-backends --vsync should prevent screen tearing on most setups if needed
+syncthing &
 
 # Low battery notifier
 # ~/.config/qtile/scripts/check_battery.sh & disown
@@ -14,3 +15,4 @@ eos-welcome & disown
 # Monitor setup
 ~/.screenlayout/monitor-setup.sh & disown
 # xrandr --output DP-2 --mode 1920x1080 -r 144.00
+
