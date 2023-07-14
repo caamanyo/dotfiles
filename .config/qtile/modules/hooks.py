@@ -22,3 +22,5 @@ def func(c):
         c.togroup("4")
     if c.window.get_wm_class()[0] == "Thunar":
         c.togroup("9")
+    if c.window.get_wm_class()[0] == "obsidian":
+        c.togroup("8")

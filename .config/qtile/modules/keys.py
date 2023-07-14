@@ -71,6 +71,8 @@ keys = [
         desc="Reset all window sizes"),
     Key([mod, "control"], "l", lazy.layout.maximize(),
         desc="Toggle maximize windows."),
+    Key([mod], "f", lazy.window.toggle_floating(),
+        desc="Toggle floating windows."),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed

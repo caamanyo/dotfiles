@@ -77,6 +77,7 @@ screens = [
             ),
                 widget.TextBox(
                     text='',
+                    padding=10,
                     mouse_callbacks={
                         'Button1':
                         lambda: qtile.cmd_spawn(os.path.expanduser(
