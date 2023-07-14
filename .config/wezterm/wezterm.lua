@@ -1,35 +1,45 @@
 local wezterm = require 'wezterm'
+local keybinds = require 'keybinds'
+local launcher = require 'launcher'
+-- local on = require 'on'
 
-local act = wezterm.action
-return {
-	color_scheme = 'BirdsOfParadise',
-	enable_tab_bar = false,
-	window_decorations = "NONE",
-	font_size = 15,
-	font = wezterm.font_with_fallback {
-		'JetBrains Mono',
-		'Font Awesome 6 Free',
-	},
-	keys = {
-		-- Pane Management
-		
-		-- Create
-		{mods = "CTRL|SHIFT|ALT", key = "h", action = act.SplitPane{direction="Left"}},
-		{mods = "CTRL|SHIFT|ALT", key = "j", action = act.SplitPane{direction="Down"}},
-		{mods = "CTRL|SHIFT|ALT", key = "k", action = act.SplitPane{direction="Up"}},
-		{mods = "CTRL|SHIFT|ALT", key = "l", action = act.SplitPane{direction="Right"}},
-		
-		-- Destroy
-		{mods = "CTRL|SHIFT", key = "d", action = act.CloseCurrentPane{confirm=true}},
-		
-		-- Navigation
-		{mods = "CTRL|SHIFT", key = "h", action = act.ActivatePaneDirection("Left")},
-		{mods = "CTRL|SHIFT", key = "j", action = act.ActivatePaneDirection("Down")},
-		{mods = "CTRL|SHIFT", key = "k", action = act.ActivatePaneDirection("Up")},
-		{mods = "CTRL|SHIFT", key = "l", action = act.ActivatePaneDirection("Right")},
-		{mods = "CTRL|SHIFT", key = "Space", action = act.PaneSelect{mode="Activate"}},
+-- Create config table
+local config = {}
 
-		-- Manipulation
-		{mods = "CTRL|SHIFT", key = "s", action = act.PaneSelect{mode="SwapWithActive"}},
-	}
+-- Start config_builder
+if wezterm.config_builder then
+	config = wezterm.config_builder()
+end
+
+-- Set color scheme
+-- config.color_scheme = 'AdventureTime'
+config.color_scheme = 'BirdsOfParadise'
+
+-- Tab_bar settings
+config.enable_tab_bar = false
+config.use_fancy_tab_bar = true
+
+-- Window settings
+config.enable_scroll_bar = false
+config.window_decorations = NONE
+config.window_padding = {
+	left = 5,
+	right = 0,
+	top = 5,
+	bottom = 0,
 }
+
+-- Font settings
+config.font_size = 12
+config.font = wezterm.font_with_fallback {
+		'Jetbrains mono',
+		'Font Awesome 6 Free',
+	}
+
+-- Keybinds
+keybinds.apply_to_config(config)
+
+-- Launcher settings
+launcher.apply_to_config(config)
+
+return config
