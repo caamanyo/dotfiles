@@ -1,0 +1,22 @@
+theme = "monokai_pro"
+
+[editor]
+line-number = "relative"
+bufferline = "always"
+shell = ["zsh", "-c"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
+
+[keys.insert]
+j = { k = "normal_mode" } # Exits insert mode
