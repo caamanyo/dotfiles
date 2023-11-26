@@ -27,7 +27,7 @@ local keys = {
 		{mods = "CTRL|SHIFT", key = "s", action = act.PaneSelect{mode="SwapWithActive"}},
 
 		-- Launcher
-		{mods = "CTRL|ALT", key = "l", action = act.ShowLauncherArgs {flags = 'FUZZY|TABS|LAUNCH_MENU_ITEMS'}},
+		{mods = "CTRL|SHIFT|ALT", key = "s", action = act.ShowLauncherArgs {flags = 'FUZZY|TABS|LAUNCH_MENU_ITEMS'}},
 	}
 
 function module.apply_to_config(config)

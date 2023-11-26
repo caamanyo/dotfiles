@@ -70,20 +70,21 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(fzf git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(fzf git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export PIPENV_VENV_IN_PROJECT="1"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/home/miquel/.local/bin:$PATH"
 export PATH="/home/miquel/Games/FoundryVTT-10.291/:$PATH"
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 export PATH="/usr/lib/helix:$PATH"
 
 # Python debugger
-export PYTHONBREAKPOINT="ipdb.set_trace"
+export PYTHONBREAKPOINT="pudb.set_trace"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -108,7 +109,14 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias wcl="wezterm cli list"
+alias starsector="cd $HOME/Games/starsector/ && ./starsector.sh"
+alias restart-emacs="systemctl --user restart emacs.service"
+alias zhx="zellij --layout $HOME/.config/zellij/layouts/helix.kdl"
+
+alias apaga="shutdown -h now"
 
 # Initialize starship
 eval "$(starship init zsh)"
 
+
+source /home/miquel/.config/broot/launcher/bash/br

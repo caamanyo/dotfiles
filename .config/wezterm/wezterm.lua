@@ -13,7 +13,9 @@ end
 
 -- Set color scheme
 -- config.color_scheme = 'AdventureTime'
-config.color_scheme = 'BirdsOfParadise'
+-- config.color_scheme = 'Batman'
+-- config.color_scheme = 'BirdsOfParadise'
+config.color_scheme = 'Catppuccin Mocha'
 
 -- Tab_bar settings
 config.enable_tab_bar = false
@@ -30,11 +32,13 @@ config.window_padding = {
 }
 
 -- Font settings
-config.font_size = 12
-config.font = wezterm.font_with_fallback {
-		'Jetbrains mono',
-		'Font Awesome 6 Free',
-	}
+config.font_size = 13
+config.warn_about_missing_glyphs = false
+config.font = wezterm.font_with_fallback({
+		'JetBrainsMono Nerd Font',
+		'FontAwesome',
+		'Symbols Nerd Font Mono',
+	})
 
 -- Keybinds
 keybinds.apply_to_config(config)
