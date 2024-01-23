@@ -1,0 +1,13 @@
+###############################################################
+# This file contains the verb definitions for broot
+#
+# Doc at https://dystroy.org/broot/verbs/
+###############################################################
+
+[[verbs]]
+invocation = "open_file"
+keys = ["enter"]
+shortcut = "pp"
+apply_to = "file"
+leave_broot = true
+external = ["sh", "-e", "/home/miquel/.config/broot/helix-tree.sh", "{file}"]
